@@ -1,53 +1,47 @@
 package com.vastika.studentinusa.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.vastika.studentinusa.model.College;
+import com.vastika.studentinusa.model.User;
 import com.vastika.studentinusa.repository.UserRepository;
-
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
-
+public class UserServiceImpl implements UserService{
+	
 	@Autowired
 	private UserRepository userRepository;
-	
-	
-
 
 	@Override
-	public void saveCollegeInfo(College college) {
-		userRepository.saveCollegeInfo(college);
+	public void saveUserInfo(User user) {
+		userRepository.saveUserInfo(user);
 		
 	}
 
 	@Override
-	public void updateCollegeInfo(College college) {
-		userRepository.updateCollegeInfo(college);
+	public void updateUserInfo(User user) {
+		userRepository.updateUserInfo(user);
 		
 	}
 
 	@Override
-	public List<College> getAllCollegeInfo() {
-		return userRepository.getAllCollegeInfo();
+	public List<User> getAllUserInfo() {
+		return userRepository.getAllUserInfo();
 	}
 
 	@Override
-	public void deleteCollegeInfo(int id) {
-		userRepository.deleteCollegeInfo(id);
+	public void deleteUserInfo(int id) {
+		userRepository.deleteUserInfo(id);
 		
 	}
 
 	@Override
-	public College getCollegeById(int id) {
-		return userRepository.getCollegeById(id);
+	public User getUserById(int id) {
+		return userRepository.getUserById(id);
 	}
-
-
 
 }
-
