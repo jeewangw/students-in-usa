@@ -40,7 +40,7 @@
       <a class="nav-link" href="#">Add Students</a>
     </li>
      <li class="nav-item active">
-      <a class="nav-link" href="#">List Colleges</a>
+      <a class="nav-link" href="list_college">List Colleges</a>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="#">List Students</a>
