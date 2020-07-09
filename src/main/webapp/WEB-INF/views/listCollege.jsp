@@ -31,13 +31,41 @@
 <!--===============================================================================================-->
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="add_college">Add Colleges</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Add Students</a>
+    </li>
+     <li class="nav-item active">
+      <a class="nav-link" href="#">List Colleges</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">List Students</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link disabled" href="#">Log Out</a>
+    </li>
+  </ul>
+</nav>
 
-<div>
-	<a href="add_college" Add College>Add College </a>
-</div>
 
-<div>
-	<h1> College List</h1>
+<div class="jumbotron mt-3">
+	<div class="row">
+	
+		  <div class="col-sm-4">
+		    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		    <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_H1RzK9.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+		  </div>
+		  
+		  <div class="col-sm-8 mt-5">
+		    <h1 class="text-success text-center display-2">COLLEGE LIST</h1>
+		    <p class="text-center">Here is the list of colleges where we send our students</p>
+		  </div>
+	  
+	</div>
 </div>
 
 <c:if test= "${!empty college }">
@@ -66,7 +94,7 @@
 			<td>${college.mobileNumber}</td>
 			<td>${college.address.cityName},${college.address.countryName}</td>
 
-			<td><a href="edit_college?id=${college.id}">Edit</a>|<a href="delete_college?id=${college.id}">Delete</a></td>
+			<td><a href="edit_college?id=${college.id}"class="text-success">Edit</a>|<a href="delete_college?id=${college.id}" class="text-danger">Delete</a></td>
 		</tr>
 		
 		</c:forEach>
