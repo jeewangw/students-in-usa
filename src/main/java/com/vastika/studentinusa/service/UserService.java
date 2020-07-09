@@ -10,5 +10,6 @@ public interface UserService {
 	List <User> getAllUserInfo();
 	void deleteUserInfo(int id);
 	User getUserById(int id);
+	User getUserByUsernameAndPassword(String username, String password);
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -54,6 +55,15 @@ public class UserRepositoryImpl implements UserRepository {
 	public User getUserById(int id) {
 		Session session =HibernateUtil.getSession(sessionFactory);
 		return (User) session.get(User.class, id);
+	}
+
+	@Override
+	public User getUserByUsernameAndPassword(String username, String password) {
+		Session session =HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.eq("username", username))
+		.add(Restrictions.eq("password",password));
+		return (User)criteria.uniqueResult();
 	}
 
 }

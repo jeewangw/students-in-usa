@@ -16,10 +16,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/add_user")
-	public String getAdUserForm() {
-		return "addUser";
-	}
 	
 	@RequestMapping(value = "/save_user", method=RequestMethod.POST)
 	public String saveUserInfo(@ModelAttribute User user) {

@@ -14,7 +14,7 @@
 
 <body>
 <div>
-	<form action="save_user" method="post">
+	<form action="save_college" method="post">
 		<fieldset>
 		<legend> New College Information</legend>
 			<div>
