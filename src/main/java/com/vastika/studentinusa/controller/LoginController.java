@@ -35,7 +35,7 @@ public class LoginController {
 	@RequestMapping(value = "/logout_user")
 	public String getLogOut(Model model, HttpSession session) {
 		session.invalidate();
-		model.addAttribute("msg", "LogOut Successful!!");
+		model.addAttribute("msg", "Logout Successful!!");
 		return "loginUser";
 	}
 	
@@ -48,7 +48,7 @@ public class LoginController {
 			session.setAttribute("uname",username);
 			return "redirect:/list_college";
 		}
-		model.addAttribute("msg", "Incorrect ID/PASSWORD");
+		model.addAttribute("msg", "Incorrect username/password");
 		return "loginUser";
 	}
 

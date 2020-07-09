@@ -36,8 +36,8 @@
 				<span class="login100-form-title p-b-41">
 					Account Login
 				</span>
-				<span>${msg}</span>
 				<form class="login100-form validate-form p-b-33 p-t-5" action="success" method="post">
+					<p class="text-danger text-center">${msg}</p>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="User name">

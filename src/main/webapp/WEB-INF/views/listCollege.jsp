@@ -46,7 +46,14 @@
       <a class="nav-link" href="#">List Students</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link disabled" href="#">Log Out</a>
+      <div class="dropdown">
+		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+		    ${uname}
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="logout_user">Log Out</a>
+		  </div>
+	</div>
     </li>
   </ul>
 </nav>
