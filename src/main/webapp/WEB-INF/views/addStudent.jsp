@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>College Information</title>
+  <title>Add New Student</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -46,17 +47,17 @@
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome</h3>
-                        <p>Please fill up the form to add new college information !!</p>
+                        <p>Please fill up the form to add new student information !!</p>
                     </div>
 		<div class="col-md-9 register-right">
-			<form action="save_college" method="post">
+			<form action="save_student" method="post">
 				<fieldset>
-				<h3 class="register-heading">New College Information</h3>
+				<h3 class="register-heading">New Student Information</h3>
 				<div class="row register-form">
 				<div class="col-6">
 					<div>
-						<label> College Name</label>
-						<input type ="text" name="collegeName">
+						<label> Student Name </label>
+						<input type ="text" name="studentName">
 					</div>
 		
 					<div>
@@ -68,14 +69,37 @@
 						<label>Mobile Number</label>
 						<input type ="number" name="mobileNumber">
 					</div>
-				</div>
+					<div>
+						<label>Date of Birth</label>
+						<input type ="date" name="dob">
+					</div>
+					<div>
+					<label> Verification Type</label>
+						<select name = "verificationType">
+						<option value="Citizenship">Citizenship</option>
+						<option value="Passport"> Passport </option>
+						<option value = "SSN"> SSN </option>
+						</select>
+					 </div>
+					</div>
 				<div class="col-9">
+				
+					<div>
+					<label> Process Status</label>
+						<select name = "processStatus">
+						<option value="Incomplete Documents">Incomplete Documents</option>
+						<option value="Waiting for Approval"> Waiting for Approval </option>
+						<option value = "Admission Approved"> Admission Approved </option>
+						</select>
+					 </div>
 		
 					<div>
-						<label> Courses</label>
-						<input type ="checkbox" name="courses" value="Arts"> Arts
-						<input type ="checkbox" name="courses" value="Business"> Business
-						<input type ="checkbox" name="courses" value="Computer Science"> Computer Science		
+						<label> Documents</label>
+						<input type ="checkbox" name="documents" value="SOP"> SOP
+						<input type ="checkbox" name="documents" value="SAT"> SAT
+						<input type ="checkbox" name="documents" value="TOEFL"> TOEFL
+						<input type ="checkbox" name="documents" value="Transcript"> Transcript
+						<input type ="checkbox" name="documents" value="Certificates"> Certificates		
 					</div>
 					
 					
@@ -87,13 +111,15 @@
 						<label>Country Name</label>
 						<input type ="text" name="address.countryName">
 					</div>
-								<c:if test= "${!empty college }">
-					<div>	
-						<label>Preferred Colleges</label>
-						<c:forEach items="${college}" var="college" varStatus="i">
-						<input type ="checkbox" name="colleges" value="${college.collegeName}"> ${college.collegeName}
-						</c:forEach>	
-					</div>
+					
+					<c:if test= "${!empty college }">
+						<div>
+							<label class="font-weight-bold"> Preferred Colleges</label>
+							<c:forEach items="${college}" var="colleges" varStatus="i">
+							</br>
+							<input type ="checkbox" name="colleges" value="${colleges.collegeName}">${colleges.collegeName}	
+							</c:forEach>
+						</div>
 					</c:if>
 					
 					

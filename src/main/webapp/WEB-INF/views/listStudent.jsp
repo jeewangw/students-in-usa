@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>COLLEGE LIST</title>
+	<title>STUDENT LIST</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -68,40 +68,48 @@
 		  </div>
 		  
 		  <div class="col-sm-8 mt-5">
-		    <h1 class="text-success text-center display-2">COLLEGE LIST</h1>
-		    <p class="text-center">Here is the list of colleges where we send our students</p>
+		    <h1 class="text-success text-center display-2">STUDENT LIST</h1>
+		    <p class="text-center">Here is the list of students who wants to apply</p>
 		  </div>
 	  
 	</div>
 </div>
 
-<c:if test= "${!empty college }">
+<c:if test= "${!empty student }">
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">SN</th>
       <th scope="col">ID</th>
-      <th scope="col">College Name</th>
-      <th scope="col">Courses</th>
+      <th scope="col">Student Name</th>
       <th scope="col">Email</th>
       <th scope="col">Mobile Number</th>
+      <th scope="col">Date</th>
       <th scope="col">Address</th>
+      <th scope="col">Verification Type</th>
+      <th scope="col">Documents</th>
+      <th scope="col">Colleges</th>
+      <th scope="col">Process Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   	<tbody>
 	
-		<c:forEach items="${college}" var="college" varStatus="i">
+		<c:forEach items="${student}" var="student" varStatus="i">
 		<tr>
 			<td>${i.count}</td>
-			<td>${college.id}</td>
-			<td>${college.collegeName}</td>
-			<td>${college.courses}</td>
-			<td>${college.email}</td>
-			<td>${college.mobileNumber}</td>
-			<td>${college.address.cityName},${college.address.countryName}</td>
+			<td>${student.id}</td>
+			<td>${student.studentName}</td>
+			<td>${student.email}</td>
+			<td>${student.mobileNumber}</td>
+			<td>${student.dob}</td>
+			<td>${student.address.cityName},${student.address.countryName}</td>
+			<td>${student.verificationType}</td>
+			<td>${student.documents}</td>
+			<td>${student.colleges}</td>
+			<td>${student.processStatus}</td>
 
-			<td><a href="edit_college?id=${college.id}"class="text-success">Edit</a>|<a href="delete_college?id=${college.id}" class="text-danger">Delete</a></td>
+			<td><a href="edit_student?id=${student.id}"class="text-success">Edit</a>|<a href="delete_student?id=${student.id}" class="text-danger">Delete</a></td>
 		</tr>
 		
 		</c:forEach>
