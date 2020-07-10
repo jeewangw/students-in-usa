@@ -87,14 +87,6 @@
 						<label>Country Name</label>
 						<input type ="text" name="address.countryName">
 					</div>
-								<c:if test= "${!empty college }">
-					<div>	
-						<label>Preferred Colleges</label>
-						<c:forEach items="${college}" var="college" varStatus="i">
-						<input type ="checkbox" name="colleges" value="${college.collegeName}"> ${college.collegeName}
-						</c:forEach>	
-					</div>
-					</c:if>
 					
 					
 					
