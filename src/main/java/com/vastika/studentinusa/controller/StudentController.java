@@ -46,6 +46,7 @@ public class StudentController {
 	
 	@RequestMapping(value = "/edit_student")
 	public String getEditStudentForm(@RequestParam int id, Model model) {
+		model.addAttribute("college",collegeService.getAllCollegeInfo());
 		model.addAttribute("student",studentService.getStudentById(id));
 		return "editStudent";
 	}
