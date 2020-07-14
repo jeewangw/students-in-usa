@@ -16,32 +16,7 @@
   <link rel="stylesheet" type="text/css" href="resources/college_registration/main.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="add_college">Add Colleges</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="add_student">Add Students</a>
-    </li>
-     <li class="nav-item active">
-      <a class="nav-link" href="list_college">List Colleges</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="list_student">List Students</a>
-    </li>
-    <li class="nav-item active">
-      <div class="dropdown">
-		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		    ${uname}
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="logout_user">Log Out</a>
-		  </div>
-	</div>
-    </li>
-  </ul>
-</nav>
+<%@ include file="navbar.jsp" %>
 
 <div>
 	<form action="update_student" method="post">
@@ -86,13 +61,12 @@
 				<c:if test="${fn:contains(student.documents, 'Certificates')}">checked</c:if>
 				> Certificates
 			</div>
-			
 				<div>
 				<label class="font-weight-bold"> Colleges</label>
 				<c:forEach items="${college}" var="colleges" varStatus="i">
 				</br>
 				<input type ="checkbox" name="colleges" value="${colleges.collegeName}"
-				<c:if test="${fn:contains(student.documents, '${colleges.collegeName}')}">checked</c:if>
+				<c:if test="${fn:contains(student.colleges, '${colleges.collegeName}')}">checked</c:if>
 				> ${colleges.collegeName}
 				</c:forEach>
 			</div>

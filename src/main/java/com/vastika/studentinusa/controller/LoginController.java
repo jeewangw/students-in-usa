@@ -43,9 +43,11 @@ public class LoginController {
 	public String login(@RequestParam String username, @RequestParam String password, HttpSession session, Model model) {
 		
 		User user = userService.getUserByUsernameAndPassword(username, password);
-		
 		if (user != null) {
+			int user_id = user.getId();
+			System.out.println(user_id);
 			session.setAttribute("uname",username);
+			session.setAttribute("uid",user_id);
 			return "redirect:/list_college";
 		}
 		model.addAttribute("msg", "Incorrect username/password");

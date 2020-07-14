@@ -8,6 +8,7 @@
 <title>User List</title>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 
 <div>
 	<a href="add_user" Add STUDENT>Add STUDENT </a>

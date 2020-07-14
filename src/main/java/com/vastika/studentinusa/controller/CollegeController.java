@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.vastika.studentinusa.model.College;
 import com.vastika.studentinusa.model.Student;
 import com.vastika.studentinusa.service.CollegeService;
+import com.vastika.studentinusa.service.UserService;
 
  
 @Controller
@@ -19,6 +20,7 @@ public class CollegeController {
 	
 	@Autowired
 	private CollegeService collegeService;
+
 	
 	@RequestMapping(value = "/add_college")
 	public String getAdUserForm() {
